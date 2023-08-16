@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp1/Page/cupertinoTestRoute.dart';
 import 'package:myapp1/Page/imgRoute.dart';
+import 'package:myapp1/Page/inputRoute.dart';
+import 'package:myapp1/Page/inputRoute2.dart';
 import 'package:myapp1/Page/newrouter.dart';
 import 'package:myapp1/Page/tipRoute.dart';
 import 'package:myapp1/Page/textStyle.dart';
@@ -41,7 +43,9 @@ class MyApp extends StatelessWidget {
         "CupertinoTestRoute":(context)=>CupertinoTestRoute(),
         "tip_route":(context)=>TipRoute(text: 'text'),
         "text_style":(context)=>TextStyleL(),
-        "img_route":(context)=>ImgRoute(text: 'text')
+        "img_route":(context)=>ImgRoute(text: 'text'),
+        "input_route":(context)=>InputRoute(),
+        "input_route2":(context)=>FocusTestRoute()
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -86,7 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
       children: <Widget>[
         TextButton(onPressed: (){
           Navigator.of(context).pushNamed("new_page",arguments: 'hi');
-        }, child: Text("open new route"))
+        }, child: Text("open new route")),
+        TextButton(onPressed: (){
+          Navigator.of(context).pushNamed("input_route2");
+        }, child: Text("input route"))
       ],
     );
   }
