@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp1/Page/cupertinoTestRoute.dart';
+import 'package:myapp1/Page/formRoute.dart';
 import 'package:myapp1/Page/imgRoute.dart';
 import 'package:myapp1/Page/inputRoute.dart';
 import 'package:myapp1/Page/inputRoute2.dart';
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
         "text_style":(context)=>TextStyleL(),
         "img_route":(context)=>ImgRoute(text: 'text'),
         "input_route":(context)=>InputRoute(),
-        "input_route2":(context)=>FocusTestRoute()
+        "input_route2":(context)=>FocusTestRoute(),
+        "form_route":(context)=>FormTestRoute()
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -92,8 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
           Navigator.of(context).pushNamed("new_page",arguments: 'hi');
         }, child: Text("open new route")),
         TextButton(onPressed: (){
-          Navigator.of(context).pushNamed("input_route2");
-        }, child: Text("input route"))
+          Navigator.of(context).pushNamed("form_route");
+        }, child: Text("form_route"))
       ],
     );
   }
