@@ -20,6 +20,35 @@ class _FocusTestRouteState extends State<FocusTestRoute> {
             child: Column(
           children: [
             TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                    labelText: "Email",
+                    hintText: "电子邮件地址",
+                    prefixIcon: Icon(Icons.email),
+                    border: InputBorder.none //隐藏下划线
+                )
+            ),
+            // decoration: BoxDecoration(
+            //   // 下滑线浅灰色，宽度1像素
+            //     border: Border(bottom: BorderSide(color: Colors.grey[200], width: 1.0))
+            // ),
+            TextField(
+            decoration: InputDecoration(
+            labelText: "用户名",
+                hintText: "用户名或邮箱",
+                prefixIcon: Icon(Icons.person)
+            ),
+        ),
+          TextField(
+            decoration: InputDecoration(
+                prefixIcon: Icon(Icons.lock),
+                labelText: "密码",
+                hintText: "您的登录密码",
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 13.0)
+            ),
+            // obscureText: true,
+            ),
+            TextField(
               autofocus: true,
               focusNode: focusNode1, //关联focusNode1
               decoration: InputDecoration(labelText: "input1"),
@@ -28,9 +57,21 @@ class _FocusTestRouteState extends State<FocusTestRoute> {
               focusNode: focusNode2, //关联focusNode2
               decoration: InputDecoration(labelText: "input2"),
             ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: "请输入用户名",
+                prefixIcon: Icon(Icons.person),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue)
+                )
+              ),
+            ),
             Builder(
               builder: (ctx) {
-                return Column(
+                return Row(
                   children: <Widget>[
                     ElevatedButton(
                       child: Text("移动焦点"),
