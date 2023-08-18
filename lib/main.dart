@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:myapp1/Page/FlexLayoutTestRoute.dart';
+import 'package:myapp1/Page/FlowRoute.dart';
+import 'package:myapp1/Page/constrainRoute.dart';
 import 'package:myapp1/Page/cupertinoTestRoute.dart';
 import 'package:myapp1/Page/formRoute.dart';
 import 'package:myapp1/Page/imgRoute.dart';
 import 'package:myapp1/Page/inputRoute.dart';
 import 'package:myapp1/Page/inputRoute2.dart';
 import 'package:myapp1/Page/newrouter.dart';
+import 'package:myapp1/Page/progressRoute.dart';
+import 'package:myapp1/Page/rowOrColumnRoute.dart';
 import 'package:myapp1/Page/tipRoute.dart';
 import 'package:myapp1/Page/textStyle.dart';
 
@@ -47,7 +52,12 @@ class MyApp extends StatelessWidget {
         "img_route":(context)=>ImgRoute(text: 'text'),
         "input_route":(context)=>InputRoute(),
         "input_route2":(context)=>FocusTestRoute(),
-        "form_route":(context)=>FormTestRoute()
+        "form_route":(context)=>FormTestRoute(),
+        "progress_route":(context)=>ProgressRoute(),
+        "ConstrainRoute":(context)=>ConstrainRoute(),
+        "RowOrColumnRoute":(context)=>RowOrColumnRoute(),
+        "FlexLayoutTestRoute":(context)=>FlexLayoutTestRoute(),
+        "FlowRoute":(context)=>FlowRoute()
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -94,8 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
           Navigator.of(context).pushNamed("new_page",arguments: 'hi');
         }, child: Text("open new route")),
         TextButton(onPressed: (){
-          Navigator.of(context).pushNamed("form_route");
-        }, child: Text("form_route"))
+          Navigator.of(context).pushNamed("FlowRoute");
+        }, child: Text("FlowRoute"))
       ],
     );
   }
