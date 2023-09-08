@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp1/Page/FlexLayoutTestRoute.dart';
+
+import 'Page/Page1.dart';
+import 'Page/Page2.dart';
+import 'Page/Page4.dart';
+import 'Page/page3.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +15,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      
       home: MyHomePage(),
     );
   }
@@ -38,67 +41,46 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Bottom Navigation Demo'),
       ),
       body: _pages[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Page 1',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Page 2',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Page 3',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Page 4',
-          )
-        ],
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 0;
+                });
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 1;
+                });
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.person),
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 2;
+                });
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 3;
+                });
+              },
+            ),
+          ],
+        ),
       ),
     );
-  }
-}
 
-class Page1 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Page 1'),
-    );
-  }
-}
-
-class Page2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Page 2'),
-    );
-  }
-}
-
-class Page3 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Page 3'),
-    );
-  }
-}
-class Page4 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Page 4'),
-    );
   }
 }
